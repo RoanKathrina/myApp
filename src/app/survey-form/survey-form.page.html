@@ -1,0 +1,89 @@
+<!-- <div class='SurveyForm'>
+  <div class='HeaderSurveyForm'>
+    <div style='display: flex'>
+      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+      <h1 style='vertical-align: middle; line-height: 70px;'>Roan's Burger<h1>
+    </div>
+    <div>
+      <h3>Dashboard</h3>
+    </div>
+  </div>
+</div> -->
+<div class='SurveyForm'>
+  <div class='HeaderSurveyForm'>
+    <div style='display: flex; float: left;'>
+      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+      <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
+    </div>
+    <div style='float: left; width: 20%; display: flex'>
+      <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 40px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
+      <!-- <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 10px' *ngIf='isAdminLoggedIn' (click)='onViewSurvey()'>Survey</h3> -->
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf=isAdminLoggedIn>Sign Out</h3>
+      <h3 style='line-height: 70px; margin-left: 150px; cursor: pointer' *ngIf='!isAdminLoggedIn' (click)='onLogIn()'>Log In</h3>
+    </div>
+  </div>
+  <br/>
+  <div style='text-align: center'>
+    <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+    <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
+    <h3><strong>Description: </strong>This is a survey about the food, and service/s of Roan's Burger</h3>
+    <form [formGroup]='surveyForm' (ngSubmit)='onSubmit()'>
+      <div style='text-align: left; margin-left: 150px; display: flex;'>
+        <label style='padding-right: 5px'><h4><strong>Respondent's E-mail</strong></h4></label>
+        <input type='text' style='width: 350px; margin-right: 20px' formControlName='e-mail'><br/>
+        <ion-button color='#8B4513' style='margin-right: 10px' (click)='onGenerateDateAndTime()'>Generate Date and Time</ion-button>
+        <input type='text' style='width: 350px; word-wrap: break-word' [value]='dateAndTime' formControlName='date_and_time'>     
+      </div>
+      <div style='text-align: left; margin-left: 375px'>
+        <span *ngIf='(!surveyForm.get("e-mail").valid && surveyForm.get("e-mail").touched) || (!surveyForm.get("e-mail").valid && isSurveyFormSubmitted)'>Please input valid E-mail</span>
+      </div>
+      <br/>
+      <!-- <div style='text-align: left; margin-left: 150px; display: flex'>
+        <ion-button color='#8B4513'>Generate Date and Time</ion-button>
+        <input type='text' style='width: 350px'>
+      </div> -->
+      <div class='SurveyFormDiv'>
+        <h3>1. What is the most delicious Roan's Burger for you?</h3>
+        <input type='radio' formControlName='question1' value="Roan's Burger"> Roan's Burger<br/>
+        <input type='radio' formControlName='question1' value='Cheese Burger'> Cheese Burger<br/>
+        <input type='radio' formControlName='question1' value='Cheese Burger De Luxe'> Cheese Burger De Luxe<br/>
+        <input type='radio' formControlName='question1' value='Cheesy Burger Roan'> Cheesy Burger Roan<br/>
+        <span class='ErrorMessage' *ngIf='!surveyForm.get("question1").valid && isSurveyFormSubmitted'>* Kindly select answer for Question No. 1</span>
+      </div>
+      <div class='SurveyFormDiv'>
+        <h3>2. How will you rate your favorite Roan's Burger?</h3>
+        <input type='radio' formControlName='question2' value='Poor'> Poor (Needs improvement)<br/>
+        <input type='radio' formControlName='question2' value='Moderate'> Moderate (Just enough)<br/>
+        <input type='radio' formControlName='question2' value='Good'> Good (Delicious)<br/>
+        <input type='radio' formControlName='question2' value='Very Good'> Very Good (Very Delicious)<br/>
+        <span class='ErrorMessage' *ngIf='!surveyForm.get("question2").valid && isSurveyFormSubmitted'>* Kindly select answer for Question No. 2</span>
+      </div>
+      <div class='SurveyFormDiv'>
+        <h3>3. What other toppings do you want to be available in Roan's Burger?</h3>
+        <input type='radio' formControlName='question3' value='Lettuce'> Lettuce<br/>
+        <input type='radio' formControlName='question3' value='Pickles'> Pickles<br/>
+        <input type='radio' formControlName='question3' value='Tomatoes'> Tomatoes<br/>
+        <input type='radio' formControlName='question3' value='Mushrooms'> Mushrooms<br/>
+        <span class='ErrorMessage' *ngIf='!surveyForm.get("question3").valid && isSurveyFormSubmitted'>* Kindly select answer for Question No. 3</span>
+      </div>
+      <div class='SurveyFormDiv'>
+        <h3>4. How likely are you to recommend Roan's Burger to your family, friends, or colleagues?</h3>
+        <input type='radio' formControlName='question4' value='Never'> Never (I will never recommend it.)<br/>
+        <input type='radio' formControlName='question4' value='Not likely'> Not likely (I will recommend it but not all the time.)<br/>
+        <input type='radio' formControlName='question4' value='Very much'> Very much (I will recommend it.)<br/>
+        <span class='ErrorMessage' *ngIf='!surveyForm.get("question4").valid && isSurveyFormSubmitted'>* Kindly select answer for Question No.4</span>
+      </div>
+      <div class='SurveyFormDiv'>
+        <h3>5. What are of Roan's Burger needs improvement?</h3>
+        <input type='radio' formControlName='question5' value='Friendlier Staff and Crew'> Friendlier Staff and Crew<br/>
+        <input type='radio' formControlName='question5' value="Bigger Roan's Burger Stores"> Bigger Roan's Burger Stores<br/>
+        <input type='radio' formControlName='question5' value="More franchise stores of Roan's Burger nationwide"> More franchise stores of Roan's Burger nationwide<br/>
+        <span class='ErrorMessage' *ngIf='!surveyForm.get("question5").valid && isSurveyFormSubmitted'>* Kindly select answer for Question No.5</span>
+      </div>
+      <div>
+        <ion-button color='#8B4513' type='button' style='margin-right: 20px' (click)='onResetSurvey()'>Reset Survey</ion-button>
+        <ion-button color='#8B4513' type='submit'>Submit Survey</ion-button>
+      </div>
+    </form>
+  </div>
+</div>

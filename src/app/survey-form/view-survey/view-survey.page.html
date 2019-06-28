@@ -1,0 +1,58 @@
+<div class='ViewSurvey'>
+  <div class='HeaderViewSurvey'>
+    <div style='display: flex; float: left'>
+      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+      <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
+    </div>
+    <div style='float: left; width: 25%; display: flex'>
+      <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 20px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 20px' (click)='onViewSurvey()'>Survey</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>
+    </div>
+  </div>
+  <br>
+  <div style='text-align: center'>
+    <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+    <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
+    <h3><strong>Description: </strong>This is a survey about food, and service/s of Roan's Burger</h3>
+    <form [formGroup]='surveyForm'>
+      <div style='text-align: left; margin-left: 150px;'>
+        <label style='padding-right: 20px'><h4><strong>Respondent's Name: </strong>User {{this.survey.user}}</h4></label><br/>
+        <label><h4 style='line-height: 0px'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label>
+      </div>
+      <div class='ViewSurveyDiv'>
+        <h3>1. What is the most delicious Roan's Burger for you?</h3>
+        <input type='radio' formControlName='question1' value="Roan's Burger"> Roan's Burger<br/>
+        <input type='radio' formControlName='question1' value='Cheese Burger'> Cheese Burger<br/>
+        <input type='radio' formControlName='question1' value='Cheese Burger De Luxe'> Cheese Burger De Luxe<br/> 
+        <input type='radio' formControlName='question1' value='Cheesy Burger Roan'> Cheesy Burger Roan<br/>
+      </div>
+      <div class='ViewSurveyDiv'>
+        <h3>2. How will yourate your favorite Roan's Burger?</h3>
+        <input type='radio' formControlName='question2' value='Poor'> Poor (needs improvement)<br/>
+        <input type='radio' formControlName='question2' value='Moderate'> Moderate (Just enough)<br/>
+        <input type='radio' formControlName='question2' value='Good'> Good (Delicious)<br/>
+        <input type='radio' formControlName='question2' value='Very Good'>Very Good (Very Delicious)<br/>
+      </div>
+      <div class='ViewSurveyDiv'>
+        <h3>3. What other topppings do you want to be available in Roan's Burger?</h3>
+        <input type='radio' formControlName='question3' value='Lettuce'> Lettuce<br/>
+        <input type='radio' formControlName='question3' value='Pickles'> Pickles<br/>
+        <input type='radio' formControlName='question3' value='Tomatoes'> Tomatoes<br/>
+        <input type='radio' formControlName='question3' value='Mushrooms'> Mushrooms<br/>
+      </div>
+      <div class='ViewSurveyDiv'>
+        <h3>4. How likely are you to recommend Roan's Burger to your family, friends, or colleagues?</h3>
+        <input type='radio' formControlName='question4' value='Never'> Never (I will never recommend it.)<br/>
+        <input type='radio' formControlName='question4' value='Not likely'> Not likely (I will recommend it but not all the time.)<br/>
+        <input type='radio' formControlName='question4' value='Very much'> Very much (I will recommend it.)<br/>
+      </div>
+      <div class='ViewSurveyDiv'>
+        <h3>5. What area of Roan's Burger needs improvement</h3>
+        <input type='radio' formControlName='question5' value='Friendlier Staff and Crew'> Friendlier Staff and Crew<br/>
+        <input type='radio' formControlName='question5' value="Bigger Roan's Burger Stores"> Bigger Roan's Burger Stores<br/>
+        <input type='radio' formControlName='question5' value="More franchise stores of Roan's Burger nationwide"> More franchise stores of Roan's Burger nationwide<br/>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class='Dashboard'>
+  <div class='HeaderDashboard'>
+    <div style='display: flex; float: left'>
+      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+      <h1 syle='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
+    </div>
+    <div style='float: left; width: 20%; display: flex'>
+      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' (click)='onViewSurvey()'>Survey</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>     
+    </div>
+  </div>
+  <div style='text-align: center'>
+    <div class='DashboardDiv'>
+      <h1 style='text-align: center'><strong>List of Surveys</strong></h1>
+      <div style='text-align: center; justify-content: center'>
+        <table>
+            <thead>
+              <tr>
+                <th style='text-align: center'>User</th>
+                <th style='text-align: center'>Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let survey of surveys; let i = index'>
+                <td style='text-align: center'>{{survey.user}}</td>
+                <td style='text-align: center; cursor: pointer' (click)='onViewUserSurvey(survey.user)'>View Survey</td>
+            </tbody>
+        </table>    
+      </div>
+    </div>
+  </div>
+</div>

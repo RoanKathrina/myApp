@@ -1,0 +1,54 @@
+.SurveyForm {
+    background-color: #CF8F2E;
+    height: 6000px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.HeaderSurveyForm {
+    display: flex;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid black;
+    background-color: #703B09;
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.SurveyFormDiv {
+    display: inline-block;
+    padding: 20px 205px;
+    // text-align: center;
+    justify-content: center;
+    margin: 16px;
+    border: 1px solid black;
+    background-color: #8B4513;
+    color: white;
+    width: 80%;
+}
+
+ion-button {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+span {
+    color: red;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+.ErrorMessage {
+    color: black;
+    font-weight: bold;
+}

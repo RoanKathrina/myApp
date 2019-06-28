@@ -1,0 +1,56 @@
+.LoginPage {
+    background-color: #CF8F2E;
+    width: 100%;
+    height: 2000px;
+    text-align: center;
+}
+
+.LoginPageDiv {
+    display: inline-block;
+    padding: 100px;
+    text-align: center;
+    margin: 50px 16px;
+    border: 1px solid black;
+    background-color: #8B4513;
+    color: white;
+    // width: auto;
+    width: 90%;
+}
+
+.LoginPageBtn {
+    background-color: #CF8F2E;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+ion-button {
+    background-color: #CF8F2E;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    white-space: normal;
+    height: 50px;
+}
+
+input {
+    color: black;
+}
+
+@media (min-width: 500px) {
+    .LoginPageDiv {
+        display: inline-block;
+        // width: none;
+        width: 450px;
+    }
+
+    ion-button {
+        background-color: #CF8F2E;
+        border: none;
+        color: white;
+        font-weight: bold;
+        width: 250px;
+        height: 30px;
+    }
+}

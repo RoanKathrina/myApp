@@ -1,0 +1,40 @@
+.Dashboard {
+    background-color: #CF8F2E;
+    height: 6000px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.HeaderDashboard {
+    display: flex;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid black;
+    background-color: #703B09;
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+}
+
+table {
+    border: 1px solid black;
+    margin: auto;
+    padding: 10px 40px;
+    width: 300px;
+    resize: both;
+    overflow: auto;
+}
+th, td, {
+    border: 1px solid black;
+}
+
+.DashboardDiv {
+    display: inline-block;
+    padding: 20px 205px;
+    justify-content: center;
+    margin: 16px;
+    border: 1px solid black;
+    background-color: #8B4513;
+    color: white;
+    width: 80%;
+}
