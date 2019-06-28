@@ -23,7 +23,8 @@
             <tbody>
               <tr *ngFor='let survey of surveys; let i = index'>
                 <td style='text-align: center'>{{survey.user}}</td>
-                <td style='text-align: center; cursor: pointer' (click)='onViewUserSurvey(survey.user)'>View Survey</td>
+                <ion-button color='#8B4513' (click)='onViewUserSurvey(survey.user)'>View Survey</ion-button>
+                <!-- <td style='text-align: center; cursor: pointer' (click)='onViewUserSurvey(survey.user)'>View Survey</td> -->
             </tbody>
         </table>    
       </div>

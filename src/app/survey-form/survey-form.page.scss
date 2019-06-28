@@ -23,7 +23,7 @@ a {
 
 .SurveyFormDiv {
     display: inline-block;
-    padding: 20px 205px;
+    padding: 20px 20px;
     // text-align: center;
     justify-content: center;
     margin: 16px;
@@ -51,4 +51,31 @@ input.ng-invalid.ng-touched {
 .ErrorMessage {
     color: black;
     font-weight: bold;
+}
+
+.RespondentInfoDiv {
+    text-align: center;
+    // margin-left: 150px;
+    display: inline-block;
+}
+
+// For Desktop
+@media (min-width: 500px) {
+    .RespondentInfoDiv {
+        text-align: left;
+        margin-left: 150px;
+        display: flex;
+    }
+
+    .SurveyFormDiv {
+        display: inline-block;
+        padding: 20px 205px;
+        // text-align: center;
+        justify-content: center;
+        margin: 16px;
+        border: 1px solid black;
+        background-color: #8B4513;
+        color: white;
+        width: 80%;
+    }    
 }

@@ -28,7 +28,8 @@
     <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
     <h3><strong>Description: </strong>This is a survey about the food, and service/s of Roan's Burger</h3>
     <form [formGroup]='surveyForm' (ngSubmit)='onSubmit()'>
-      <div style='text-align: left; margin-left: 150px; display: flex;'>
+      <!-- <div style='text-align: left; margin-left: 150px; display: flex;'> -->
+      <div class='RespondentInfoDiv'>
         <label style='padding-right: 5px'><h4><strong>Respondent's E-mail</strong></h4></label>
         <input type='text' style='width: 350px; margin-right: 20px' formControlName='e-mail'><br/>
         <ion-button color='#8B4513' style='margin-right: 10px' (click)='onGenerateDateAndTime()'>Generate Date and Time</ion-button>
@@ -38,10 +39,6 @@
         <span *ngIf='(!surveyForm.get("e-mail").valid && surveyForm.get("e-mail").touched) || (!surveyForm.get("e-mail").valid && isSurveyFormSubmitted)'>Please input valid E-mail</span>
       </div>
       <br/>
-      <!-- <div style='text-align: left; margin-left: 150px; display: flex'>
-        <ion-button color='#8B4513'>Generate Date and Time</ion-button>
-        <input type='text' style='width: 350px'>
-      </div> -->
       <div class='SurveyFormDiv'>
         <h3>1. What is the most delicious Roan's Burger for you?</h3>
         <input type='radio' formControlName='question1' value="Roan's Burger"> Roan's Burger<br/>

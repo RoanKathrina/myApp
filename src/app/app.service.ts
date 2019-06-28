@@ -15,7 +15,7 @@ export class AppService {
         {
             user: 1,
             email: 'roan@gmail.com',
-            date_and_time: '',
+            date_and_time: 'Friday Jun 28 2019 3:25:03 PM',
             question_1: "Roan's Burger",
             question_2: "Moderate",
             question_3: "Lettuce",
@@ -24,7 +24,7 @@ export class AppService {
         },
         {
             user: 2,
-            date_and_time: '',
+            date_and_time: 'Friday Jun 28 2019 3:25:03 PM',
             email: 'roan@gmail.com',
             question_1: "Roan's Burger",
             question_2: "Moderate",
@@ -34,7 +34,7 @@ export class AppService {
         },
         {
             user: 3,
-            date_and_time: '',
+            date_and_time: 'Friday Jun 28 2019 3:25:03 PM',
             email: 'roan@gmail.com',
             question_1: "Roan's Burger",
             question_2: "Moderate",

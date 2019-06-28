@@ -16,9 +16,11 @@
     <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
     <h3><strong>Description: </strong>This is a survey about food, and service/s of Roan's Burger</h3>
     <form [formGroup]='surveyForm'>
-      <div style='text-align: left; margin-left: 150px;'>
+      <!-- <div style='text-align: left; margin-left: 150px;'> -->
+      <div class='RespondentInfoDiv'>
         <label style='padding-right: 20px'><h4><strong>Respondent's Name: </strong>User {{this.survey.user}}</h4></label><br/>
-        <label><h4 style='line-height: 0px'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label>
+        <label><h4 class='DateAndTime'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label>
+        <!-- <label><h4 style='line-height: 10px; position: relative; display: inline'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label> -->
       </div>
       <div class='ViewSurveyDiv'>
         <h3>1. What is the most delicious Roan's Burger for you?</h3>

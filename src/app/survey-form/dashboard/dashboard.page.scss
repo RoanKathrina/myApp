@@ -23,18 +23,58 @@ table {
     width: 300px;
     resize: both;
     overflow: auto;
+    background-color: #CF8F2E;
+    color: black;
 }
+
 th, td, {
     border: 1px solid black;
 }
 
 .DashboardDiv {
     display: inline-block;
-    padding: 20px 205px;
     justify-content: center;
     margin: 16px;
     border: 1px solid black;
     background-color: #8B4513;
     color: white;
     width: 80%;
+}
+
+ion-button {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+// ion-button {
+//     background-color: #8B4513;
+//     color: white;
+//     border: none;
+//     font-weight: bold;
+// }
+
+
+// For Desktop
+@media (min-width: 500px) {
+    .DashboardDiv {
+        display: inline-block;
+        padding: 20px 205px;
+        justify-content: center;
+        margin: 16px;
+        border: 1px solid black;
+        background-color: #8B4513;
+        color: white;
+        width: 80%;
+    }
+
+    table {
+        border: 1px solid black;
+        margin: auto;
+        padding: 10px 40px;
+        width: 640px;
+        resize: both;
+        overflow: auto;
+    }
+    
 }

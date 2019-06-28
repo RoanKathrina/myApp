@@ -18,11 +18,45 @@
 
 .ViewSurveyDiv {
     display: inline-block;
-    padding: 20px 205px;
+    padding: 20px 20px;
     justify-content: center;
     margin: 16px;
     border: 1px solid black;
     background-color: #8B4513;
     color: white;
     width: 80%;
+}
+
+.RespondentInfoDiv {
+    text-align: center;
+    // margin-left: 150px;
+}
+
+.DateAndTime {
+    line-height: 10px;
+    position: relative;
+    display: inline;
+}
+// For Desktop
+@media (min-width: 500px) {
+    .RespondentInfoDiv {
+        text-align: left;
+        margin-left: 150px;
+    }
+
+    .ViewSurveyDiv {
+        display: inline-block;
+        padding: 20px 205px;
+        justify-content: center;
+        margin: 16px;
+        border: 1px solid black;
+        background-color: #8B4513;
+        color: white;
+        width: 80%;
+    }
+
+    .DateAndTime {
+        line-height: 10px;
+    }
+    
 }
