@@ -15,11 +15,12 @@
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: left; width: 20%; display: flex'>
+    <div style='float: right; margin-left: 600px; display: flex'>
       <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 40px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 40px' *ngIf='isAdminLoggedIn' (click)='onViewSurveyReport()'>Survey Report</h3>
       <!-- <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 10px' *ngIf='isAdminLoggedIn' (click)='onViewSurvey()'>Survey</h3> -->
       <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf=isAdminLoggedIn>Sign Out</h3>
-      <h3 style='line-height: 70px; margin-left: 150px; cursor: pointer' *ngIf='!isAdminLoggedIn' (click)='onLogIn()'>Log In</h3>
+      <h3 style='line-height: 70px; margin-left: 300px; cursor: pointer' *ngIf='!isAdminLoggedIn' (click)='onLogIn()'>Log In</h3>
     </div>
   </div>
   <br/>
@@ -27,6 +28,7 @@
     <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
     <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
     <h3><strong>Description: </strong>This is a survey about the food, and service/s of Roan's Burger</h3>
+    <!-- <form formGroup='surveyForm' (ngSubmit)='onSubmit()'> -->
     <form [formGroup]='surveyForm' (ngSubmit)='onSubmit()'>
       <!-- <div style='text-align: left; margin-left: 150px; display: flex;'> -->
       <div class='RespondentInfoDiv'>

@@ -13,7 +13,7 @@
     background-color: #703B09;
     color: white;
     width: 100%;
-    justify-content: space-between;
+    // justify-content: space-between;
 }
 
 .ViewSurveyDiv {
@@ -37,6 +37,14 @@
     position: relative;
     display: inline;
 }
+
+ion-button {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
 // For Desktop
 @media (min-width: 500px) {
     .RespondentInfoDiv {

@@ -4,21 +4,24 @@
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: left; width: 25%; display: flex'>
+    <div style='float: right; display: flex; margin-left: 800px'>
       <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 20px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
       <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 20px' (click)='onViewSurvey()'>Survey</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf='isAdminLoggedIn'>Sign Out</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()' *ngIf='!isAdminLoggedIn'>Log In</h3>
     </div>
   </div>
   <br>
-  <div style='text-align: center'>
+  <h3 *ngIf='!isAdminLoggedIn' style='text-align: center; font-weight: bold; color: red'>You are not authorized to view this page. Kindly log in as Administrator.</h3>
+  <div style='text-align: center' *ngIf='isAdminLoggedIn'>
     <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
     <h1 style='word-spacing: none'><strong>Roan's Burger</strong></h1>
     <h3><strong>Description: </strong>This is a survey about food, and service/s of Roan's Burger</h3>
-    <form [formGroup]='surveyForm'>
+    <!-- <form formGroup='surveyForm' (ngSubmit)='onUpdateUserSurvey()'> -->
+    <form [formGroup]='surveyForm' (ngSubmit)='onUpdateUserSurvey()'>
       <!-- <div style='text-align: left; margin-left: 150px;'> -->
       <div class='RespondentInfoDiv'>
-        <label style='padding-right: 20px'><h4><strong>Respondent's Name: </strong>User {{this.survey.user}}</h4></label><br/>
+        <label style='padding-right: 20px'><h4><strong>Respondent's Name: </strong>User {{survey.id }}</h4></label><br/>
         <label><h4 class='DateAndTime'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label>
         <!-- <label><h4 style='line-height: 10px; position: relative; display: inline'><strong>Date and Time: </strong>{{ survey.date_and_time }}</h4></label> -->
       </div>
@@ -55,6 +58,8 @@
         <input type='radio' formControlName='question5' value="Bigger Roan's Burger Stores"> Bigger Roan's Burger Stores<br/>
         <input type='radio' formControlName='question5' value="More franchise stores of Roan's Burger nationwide"> More franchise stores of Roan's Burger nationwide<br/>
       </div>
+      <br/>
+      <ion-button color='#8B4513' (click)=onUpdateUserSurvey() *ngIf='updateMode'>Update Survey</ion-button>
     </form>
   </div>
 </div>

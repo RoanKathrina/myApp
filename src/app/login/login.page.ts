@@ -16,7 +16,11 @@ export class LoginPage implements OnInit {
               private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.initForm();
+  // Refresh Page
+  // this.router.navigateByUrl('/refresh', {skipLocationChange: true}).then(() => {
+  //   this.router.navigate(['/login'])
+  // })
+   this.initForm();
   }
 
   initForm() {

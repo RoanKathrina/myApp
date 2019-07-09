@@ -4,16 +4,20 @@
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 syle='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: left; width: 20%; display: flex'>
+    <div style='float: right; margin-left: 600px; display: flex'>
       <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' (click)='onViewSurvey()'>Survey</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>     
+      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewSurveyReport()'>Survey Report</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf='isAdminLoggedIn'>Sign Out</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()' *ngIf='!isAdminLoggedIn'>Log In</h3>
     </div>
   </div>
-  <div style='text-align: center'>
+  <h3 *ngIf='!isAdminLoggedIn' style='text-align: center; font-weight: bold; color: red'>You are not authorized to view this page. Kindly log in as Administrator.</h3>
+  <div style='text-align: center' *ngIf='isAdminLoggedIn'>
     <div class='DashboardDiv'>
       <h1 style='text-align: center'><strong>List of Surveys</strong></h1>
+      <h3 *ngIf='surveys.length === 0'>There are no survey/s.</h3>
       <div style='text-align: center; justify-content: center'>
-        <table>
+        <table *ngIf='surveys.length !== 0'>
             <thead>
               <tr>
                 <th style='text-align: center'>User</th>
@@ -22,8 +26,11 @@
             </thead>
             <tbody>
               <tr *ngFor='let survey of surveys; let i = index'>
-                <td style='text-align: center'>{{survey.user}}</td>
-                <ion-button color='#8B4513' (click)='onViewUserSurvey(survey.user)'>View Survey</ion-button>
+                <td style='text-align: center'>{{ survey[1].id }}</td>
+                <ion-button color='#8B4513' (click)='onViewUserSurvey(survey[1])'>View Survey</ion-button>
+                <ion-button color='#8B4513' (click)='onDeleteUserSurvey(survey[0], survey[1].id)'>Delete Survey</ion-button>
+                <ion-button color='#8B4513' (click)='onUpdateUserSurvey(survey[0], survey[1])'>Update survey</ion-button>
+                <!-- <ion-button color='#8B4513' (click)='onViewUserSurvey(survey.user)'>View Survey</ion-button> -->
                 <!-- <td style='text-align: center; cursor: pointer' (click)='onViewUserSurvey(survey.user)'>View Survey</td> -->
             </tbody>
         </table>    
