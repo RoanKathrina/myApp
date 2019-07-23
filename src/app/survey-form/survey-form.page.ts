@@ -87,7 +87,10 @@ export class SurveyFormPage implements OnInit {
       if(this.surveyList === null) {
         this.userID = 1;
       } else {
-        this.userID = Object.keys(this.surveyList).length + 1; 
+        // this.userID = Object.keys(this.surveyList).length + 1; 
+        const surveyListLen = Object.keys(this.surveyList).length;
+        const surveyDetails = Object.entries(this.surveyList)[surveyListLen - 1][1]; 
+        this.userID = parseInt(surveyDetails['id']) + 1;
       }
       this.addSurvey();
       // this.appService.userID.next(userID);
@@ -214,7 +217,5 @@ export class SurveyFormPage implements OnInit {
     //    console.log(response); // if you're into that sorta thing
     //  });
 }
-
-
 
 }
