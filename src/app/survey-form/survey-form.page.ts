@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AppService } from '../app.service';
 // import * as email from 'nativescript-email';
 import { compose as composeEmail } from "nativescript-email";
-import { idText } from '_node_modules/typescript/lib/typescript';
+// import { idText } from '_node_modules/typescript/lib/typescript';
 declare var jquery: any;
 declare var mandrill: any;
 declare var email: any;
@@ -47,7 +47,7 @@ export class SurveyFormPage implements OnInit {
 
   initForm() {
     this.surveyForm = new FormGroup({
-      'e-mail': new FormControl(null, [Validators.required, Validators.email]),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
       'date_and_time': new FormControl({value: null, disabled: true}),
       'question1': new FormControl('', Validators.required),
       'question2': new FormControl('', Validators.required),
@@ -123,7 +123,7 @@ export class SurveyFormPage implements OnInit {
   addSurvey() {
     const survey = {
       id: this.userID,
-      email: this.surveyForm.value['e-mail'],
+      email: this.surveyForm.value['email'],
       date_and_time: this.dateAndTime,
       question_1: this.surveyForm.value['question1'],
       question_2: this.surveyForm.value['question2'],

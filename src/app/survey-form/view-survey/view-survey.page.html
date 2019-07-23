@@ -4,11 +4,15 @@
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: right; display: flex; margin-left: 800px'>
-      <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 20px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 20px' (click)='onViewSurvey()'>Survey</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf='isAdminLoggedIn'>Sign Out</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()' *ngIf='!isAdminLoggedIn'>Log In</h3>
+    <div style='float: right; display: flex; margin-left: 650px' *ngIf='isAdminLoggedIn'>
+      <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 20px; cursor: pointer' (click)='onViewDashboard()'>Dashboard</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 20px' (click)='onViewSurvey(true)'>Survey</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 20px' (click)='onViewSurveyReport()'>Survey Report</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>
+    </div>
+    <div style='float: right; display: flex; margin-left: 1000px' *ngIf='!isAdminLoggedIn'>
+      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 20px; cursor: pointer' (click)='onViewSurvey(false)'>Survey</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()'>Log In</h3>
     </div>
   </div>
   <br>

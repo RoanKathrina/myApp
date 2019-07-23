@@ -55,8 +55,8 @@ export class ViewSurveyPage implements OnInit {
     this.router.navigate(['../dashboard'], {relativeTo: this.route});
   }
 
-  onViewSurvey() {
-    this.appService.user.next(true);
+  onViewSurvey(isAdminLoggedIn: boolean) {
+    this.appService.user.next(isAdminLoggedIn);
     this.router.navigate(['../survey-form'], {relativeTo: this.route});
   }
   
@@ -89,5 +89,10 @@ export class ViewSurveyPage implements OnInit {
   
       this.appService.updateUserSurvey(this.userKey, survey);
     }
+  }
+
+  onViewSurveyReport() {
+    this.appService.user.next(true);
+    this.router.navigate(['../survey-report'], {relativeTo: this.route});
   }
 }

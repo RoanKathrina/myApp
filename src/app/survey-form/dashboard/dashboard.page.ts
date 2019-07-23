@@ -17,8 +17,7 @@ export class DashboardPage implements OnInit, OnDestroy {
   surveySubscription: Subscription;
   constructor(private appService: AppService,
               private router: Router,
-              private route: ActivatedRoute,
-              private location: Location) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     console.log('ngOnInit Dashboard');
@@ -49,9 +48,9 @@ export class DashboardPage implements OnInit, OnDestroy {
         // return;
       } else {
         this.surveys = Object.entries(response.json());
-        console.log(Object.entries(response.json()));  
       }
-    })    
+    })
+  
     // this.surveys$ = this.appService.fetchSurvey();
     // console.log(this.surveys$);
   }

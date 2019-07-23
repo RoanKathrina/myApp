@@ -3,29 +3,33 @@
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header> -->
-<ion-content>
-  <div class='LoginPage'>
-    <div class='LoginPageDiv'>
-      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
-      <h1>Roan's Burger</h1>
-      <form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
-        <label>Username</label>
-        <br/>
-        <input type='text' style='width: 100%' formControlName='username'>
-        <br/>
-        <br/>
-        <label>Password</label>
-        <input type='password' style='width: 100%' formControlName='password'>
-        <br/>
-        <br/>
-        <!-- <button class='LoginPageBtn'>Login</button> -->
-        <ion-button color='#CF8F2E' type='submit'>Login</ion-button>
-        <br/>
-        <p>Not an Administrator?</p>
-        <div style='text-align: center'>
-          <ion-button color='#CF8F2E' type='button' (click)='goToSurvey()'>Take me to the Survey</ion-button>
-        </div>
-      </form>
-    </div>
-  </div>  
-</ion-content>
+
+<!-- <ion-content>
+</ion-content> -->
+
+<div class='LoginPage'>
+  <div class='LoginPageDiv'>
+    <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
+    <h1>Roan's Burger</h1>
+    <form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+      <label>Username</label>
+      <br/>
+      <input type='text' style='width: 100%' formControlName='username'>
+      <br/>
+      <br/>
+      <label>Password</label>
+      <input type='password' style='width: 100%' formControlName='password'>
+      <br/>
+      <br/>
+      <!-- <button class='LoginPageBtn'>Login</button> -->
+      <ion-button color='#CF8F2E' type='submit'>Login</ion-button>
+      <!-- <button ion-button color='#CF8F2E' type='submit'>Login</button> -->
+      <br/>
+      <p>Not an Administrator?</p>
+      <div style='text-align: center'>
+        <ion-button color='#CF8F2E' type='button' (click)='goToSurvey()'>Take me to the Survey</ion-button>
+        <!-- <button ion-button color='#CF8F2E' type='button' (click)='goToSurvey()'>Take me to the Survey</button> -->
+      </div>
+    </form>
+  </div>
+</div>  

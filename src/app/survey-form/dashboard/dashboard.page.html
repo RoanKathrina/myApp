@@ -4,11 +4,14 @@
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 syle='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: right; margin-left: 600px; display: flex'>
+    <div style='float: right; margin-left: 750px; display: flex' *ngIf='isAdminLoggedIn'>
       <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' (click)='onViewSurvey()'>Survey</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewSurveyReport()'>Survey Report</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf='isAdminLoggedIn'>Sign Out</h3>
-      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()' *ngIf='!isAdminLoggedIn'>Log In</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' (click)='onViewSurveyReport()'>Survey Report</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()'>Sign Out</h3>
+    </div>
+    <div style='float: right; display: flex; margin-left: 1000px;' *ngIf='!isAdminLoggedIn'>
+      <h3 style='vertical-align: middle; line-height: 70px; padding-right: 40px; cursor: pointer' (click)='onViewSurvey()'>Survey</h3>
+      <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onLogIn()'>Log In</h3>
     </div>
   </div>
   <h3 *ngIf='!isAdminLoggedIn' style='text-align: center; font-weight: bold; color: red'>You are not authorized to view this page. Kindly log in as Administrator.</h3>

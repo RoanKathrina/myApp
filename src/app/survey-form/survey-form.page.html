@@ -1,26 +1,16 @@
-<!-- <div class='SurveyForm'>
-  <div class='HeaderSurveyForm'>
-    <div style='display: flex'>
-      <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
-      <h1 style='vertical-align: middle; line-height: 70px;'>Roan's Burger<h1>
-    </div>
-    <div>
-      <h3>Dashboard</h3>
-    </div>
-  </div>
-</div> -->
 <div class='SurveyForm'>
   <div class='HeaderSurveyForm'>
     <div style='display: flex; float: left;'>
       <img src='https://www.mcdelivery.com.ph/uploads/images/BigMacALA435X320-min.png' style='height: 100px'>
       <h1 style='vertical-align: middle; line-height: 70px'>Roan's Burger</h1>
     </div>
-    <div style='float: right; margin-left: 600px; display: flex'>
+    <div style='float: right; margin-left: 700px; display: flex' *ngIf='isAdminLoggedIn'>
       <h3 style='vertical-align: middle; line-height: 70px; margin-left: 0px; padding-right: 40px; cursor: pointer' *ngIf='isAdminLoggedIn' (click)='onViewDashboard()'>Dashboard</h3>
       <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 40px' *ngIf='isAdminLoggedIn' (click)='onViewSurveyReport()'>Survey Report</h3>
-      <!-- <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer; padding-right: 10px' *ngIf='isAdminLoggedIn' (click)='onViewSurvey()'>Survey</h3> -->
       <h3 style='vertical-align: middle; line-height: 70px; cursor: pointer' (click)='onSignOut()' *ngIf=isAdminLoggedIn>Sign Out</h3>
-      <h3 style='line-height: 70px; margin-left: 300px; cursor: pointer' *ngIf='!isAdminLoggedIn' (click)='onLogIn()'>Log In</h3>
+    </div>
+    <div style='float: right; margin-left: 750px; display: flex' *ngIf='!isAdminLoggedIn'>
+      <h3 style='line-height: 70px; margin-left: 300px; cursor: pointer' (click)='onLogIn()'>Log In</h3>
     </div>
   </div>
   <br/>
@@ -31,14 +21,14 @@
     <!-- <form formGroup='surveyForm' (ngSubmit)='onSubmit()'> -->
     <form [formGroup]='surveyForm' (ngSubmit)='onSubmit()'>
       <!-- <div style='text-align: left; margin-left: 150px; display: flex;'> -->
-      <div class='RespondentInfoDiv'>
-        <label style='padding-right: 5px'><h4><strong>Respondent's E-mail</strong></h4></label>
-        <input type='text' style='width: 350px; margin-right: 20px' formControlName='e-mail'><br/>
+      <div class='RespondentInfoDiv' style='margin-left: 175px'>
+        <label style='padding-right: 10px'><h4><strong>Respondent's E-mail</strong></h4></label>
+        <input type='text' style='width: 350px; margin-right: 20px' formControlName='email'><br/>
         <ion-button color='#8B4513' style='margin-right: 10px' (click)='onGenerateDateAndTime()'>Generate Date and Time</ion-button>
         <input type='text' style='width: 350px; word-wrap: break-word' [value]='dateAndTime' formControlName='date_and_time'>     
       </div>
-      <div style='text-align: left; margin-left: 375px'>
-        <span *ngIf='(!surveyForm.get("e-mail").valid && surveyForm.get("e-mail").touched) || (!surveyForm.get("e-mail").valid && isSurveyFormSubmitted)'>Please input valid E-mail</span>
+      <div style='text-align: left; margin-left: 385px'>
+        <span *ngIf='(!surveyForm.get("email").valid && surveyForm.get("email").touched) || (!surveyForm.get("email").valid && isSurveyFormSubmitted)'><strong>Please input valid E-mail</strong></span>
       </div>
       <br/>
       <div class='SurveyFormDiv'>

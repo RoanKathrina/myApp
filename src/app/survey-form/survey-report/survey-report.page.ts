@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from '../../app.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { app } from 'firebase';
 declare var zingchart: any;
 
 @Component({
@@ -39,7 +40,7 @@ export class SurveyReportPage implements OnInit, OnDestroy {
   }
 
   ionViewWillEnter() {
-    console.log('IOnViewWillEnter');
+    console.log('IOnViewWillEnter: SurveyReport');
     this.userSubscription = this.appService.user.subscribe((user: any) => {
       this.isAdminLoggedIn = user;
     })
@@ -561,7 +562,8 @@ export class SurveyReportPage implements OnInit, OnDestroy {
     this.router.navigate(['../dashboard'], {relativeTo: this.route});
   }
 
-  onViewSurvey() {
+  onViewSurvey(isAdminLoggedIn: boolean) {
+    this.appService.user.next(isAdminLoggedIn);
     this.router.navigate(['../survey-form'], {relativeTo: this.route});
   }
 
